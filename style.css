@@ -1,0 +1,334 @@
+html, body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+}
+
+h2 {
+	color: #443825;
+	
+}
+
+h2 {
+	color: #9B2D13;
+	margin-bottom: 10px;
+	font: 30px "amrican typewriter" serif;
+}
+
+a {
+	text-decoration: none;
+
+}
+
+::selection {
+	color: #345F4C;
+	background-color: #759C8A;
+}
+
+::-moz-selection {
+	color: #345F4C;
+	background-color: #759C8A;
+} 
+
+.footer p::selection {
+	background-color: transparent;
+}
+
+.footer p::-moz-selection {
+	background-color: transparent;
+}
+
+.header {
+	position: relative;
+	height: 214px;
+	width: 100%;
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+.nav {
+	font: 18px Arial,sans-serif;
+	color: #443825;
+	height: 20px;
+	margin-top: 10px;
+	margin-right: 151px;
+}
+
+.nav li {
+	float: right;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.nav a {
+	padding: 2px;
+	color: #443825;
+	border: solid 2px transparent;
+}
+
+.nav .about_nav {
+	border: solid 2px #759C8A;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.nav a:hover {
+	border: solid 2px #759C8A;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.container {
+	background-color: #A4CFBC;
+	margin: 0 auto;
+}
+
+.main {
+	background: url(images/main_bg.png) top center  no-repeat;
+	height: 3114px;
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.marine, #locate, #rank, #explore, #entertain {
+	position: absolute;
+	display: block;
+	width: 960px;
+}
+
+.marine {
+	height: 164px;
+	width: 469px;
+	top: -110px;
+	background: url(images/submarine.png) no-repeat;
+}
+
+.dscrpt {
+	margin: 18px 29px;
+}
+
+.left .icon,.right .icon {
+	width: 166px;
+	height: 166px;
+}
+
+.left .icon, .left .dscrpt {
+	float: left;
+}
+
+.right .icon, .right .dscrpt {
+	float: right;
+}
+
+#locate {
+	top: 224px;
+
+}
+
+#rank {
+	top: 725px;
+}
+
+#explore {
+	top: 1332px;
+}
+
+#entertain {
+	top: 2202px;
+}
+
+#locate .icon {
+	background-image: url('images/location.png');
+}
+
+#rank .icon {
+	background-image: url('images/rank.png');
+}
+
+#explore .icon {
+	background-image: url('images/explore.png');
+}
+
+#entertain .icon {
+	background-image: url('images/entertain.png');
+}
+
+#entertain .dscrpt a {
+	display: inline-block;
+	height: 63px;
+	width: 63px;
+	-webkit-transform-origin: 50% 50%;
+}
+
+#entertain .dscrpt a:hover {
+	-webkit-transform: rotate(0.02turn);
+	-moz-transform: rotate(0.02turn);
+	-ms-transform: rotate(0.02turn);
+	-o-transform: rotate(0.02turn);
+	background-position: 100% 100%;
+}
+
+#entertain .github a {
+	background-image: url('images/github.png');
+}
+
+#entertain .douban a {
+	background-image: url('images/douban.png');
+}
+
+#entertain .ps a {
+	background-image: url('images/ps.png');
+}
+
+#entertain .v2ex a {
+	background-image: url('images/v2ex.png');
+}
+
+li {
+	list-style-type: none;
+}
+
+#explore li {
+	padding-left: 40px;
+	float: right;
+}
+
+#entertain li {
+	padding-right: 40px;
+	float: left;
+}
+
+.main .dscrpt p {
+	color: #595741;
+	font: 20px  sans-serif;
+}
+
+#locate h2, #explore h2 {
+	text-align:right;
+}
+
+#locate p {
+	width: 296px;
+	text-align: justify;
+}
+
+#rank p {
+	width: 516px;
+	text-align: justify;
+}
+
+.footer {
+	background: #443825 url('images/target.png') no-repeat 916px 0;
+	height: 120px;
+	position: relative;
+}
+
+.footer p {
+	position: absolute;
+	color: #f8f7c1;
+	bottom: 10px;
+	right: 152px;
+	font: 18px  sans-serif;
+}
+
+#scrollToTop {
+	z-index: 1000;
+	position: fixed;
+	opacity: 0;
+	-webkit-transition: opacity 1.5s;
+	-moz-transition: opacity 1.5s;
+	-o-transition: opacity 1.5s;
+	transition: opacity 1.5s;
+	height: 102px;
+	width: 39px;
+	right: 58px;
+	top: 300px;
+}
+
+#scrollToTop .rocket {
+	display: inline-block;
+	width: 39px;
+	height: 73px;
+	cursor: pointer;
+	background: url('images/toTop.png') no-repeat;
+}
+
+#scrollToTop .bubble1, #scrollToTop .bubble2, #scrollToTop .bubble3 {
+	width: 39px;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+#scrollToTop .bubble1 {
+	height: 7px;
+	background-image: url('images/bubble1.png');
+}
+
+#scrollToTop .bubble2 {
+	height: 9px;
+	background-image: url('images/bubble2.png');
+}
+
+#scrollToTop .bubble3 {
+	height: 13px;
+	background-image: url('images/bubble3.png');
+}
+
+#quickMove {
+	width: 114px;
+	height: 14px;
+	font: 12px/18px Arial,sans-serif;
+	background: url('images/holder.png') no-repeat 0 3px;
+	position: absolute;
+	left: 0;
+	top: 350px;
+}
+
+#quickMove .fold {
+	position: absolute;
+	top: 0;
+	width: 78px;
+	height: 14px;
+	margin: 0 21px 0 15px;
+	background-color: #443825;
+	-webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+#quickMove .choose {
+	width: 68px;
+	height: 100px;
+	padding-top: 8px;
+	position: absolute;
+	top: 14px;
+	left: 20px;
+	text-indent: 10px;
+	background: #443825 url('images/banner_bottom.png') no-repeat bottom;
+}
+
+#quickMove a {
+	color: #f8f7c1;
+	text-decoration: none;
+}
+
+.cur_p {
+	background-color: #2d2519;
+}
+
+#quickMove .keep {
+	height: 7px;
+}
+
+#quickMove .bottom {
+	height: 5px;
+}
+
+#quickMove a:hover {
+	text-decoration: underline;
+}
