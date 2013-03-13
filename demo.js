@@ -14,3 +14,11 @@
 			$('.geolocation span').css('opacity', '1');
 	});
 })();
+(function(){
+	$('.collapse .ico').mouseenter(function(){
+		$('.collapse .ico').css('-webkit-transform','scale(1, 0.5)');
+	});
+	$('.collapse .ico').mouseleave(function(){
+		$('.collapse .ico').css('-webkit-transform','scale(1, 1)');
+	});
+})()

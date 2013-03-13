@@ -13,44 +13,16 @@ ul {
 	list-style-type: none;
 }
 
-.wrapper {
-	width: 960px;
-	margin: 0 auto;
+.header {
+	position: relative;
+	background-color: #F2F2F2;
+	margin-bottom: 40px;
 }
 
-.nav {
-	font: 18px Arial,sans-serif;
+.header p {
 	color: #443825;
-	height: 20px;
-	margin: 15px 0;
-}
-
-.nav li {
-	float: right;
-	text-align: center;
-	margin-left: 10px;
-}
-
-.nav a {
-	padding: 2px;
-	color: #443825;
-	border: solid 2px transparent;
-}
-
-.nav .demo {
-	border: solid 2px #759C8A;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-o-border-radius: 4px;
-}
-
-.nav a:hover {
-	border: solid 2px #759C8A;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-o-border-radius: 4px;
+	font: 48px Arial,sans-serif;
+	padding: 68px 386px 68px 327px;
 }
 
 .demo_logo {
@@ -58,25 +30,26 @@ ul {
 	height: 166px;
 	width: 166px;
 	background-image: url('images/demo_logo.png');
+	margin: 12px 0 0 151px;
 }
 
-.header {
-	margin-bottom: 40px;
-}
-
-.header p {
-	color: #443825;
-	font: 48px Arial,sans-serif;
-	margin-left: 193px;
-	margin-top: 116px;
-	margin-right: 277px;
-	border-bottom: solid 10px #a4cfbc;
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
 }
 
 .col {
 	float: left;
 	width: 156px;
-	margin: 0 82px;
+	margin: 0 123px;
+}
+
+.wrapper .leftmost {
+	margin-left: 0;
+}
+
+.wrapper .rightmost {
+	margin-right: 0;
 }
 
 .clearfix:after {
@@ -92,7 +65,7 @@ ul {
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 .widget {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .ico_title {
@@ -149,14 +122,18 @@ ul {
 }
 
 .geolocation a{
-	margin-top: 10px;
+	margin-top: 5px;
+}
+
+.ico_title a {
+	margin-top: 0;
 }
 
 .geolocation span {
 	background-image: url('images/geo_locate.png');
 	display: inline-block;
 	left: 68px;
-	top: 13px;
+	top: 27px;
 	width: 19px;
 	height: 24px;
 	position: absolute;
@@ -167,8 +144,23 @@ ul {
 	transition: opacity 0.3s;
 }
 
+.collapse .spring_base {
+	border-top: 10px solid #7F7F7F;
+	margin: 5px 38px 0;
+}
+
+.collapse .ico {
+	height: 83px;
+	-webkit-transform-origin: 50% 0;
+	-webkit-transform: scale(1, 1);
+	-webkit-transition: height 1s;
+	-moz-transition: height 1s;
+	-o-transition: height 1s;
+	transition: height 1s;
+}
+
 .footer {
-	padding: 10px 0 9px 0;
+	padding: 5px 0 9px 0;
 	text-align: center;
 	color: #443825;
 	font: 12px Arial, sans-serif;
@@ -176,13 +168,13 @@ ul {
 }
 
 .f_nav {
-	margin: 15px auto 1px auto;
+	margin: 10px auto 5px auto;
 	width: 146px;
 }
 
 .f_nav li {
 	float: left;
-	border-right: solid 1px #443825;
+	border-right: 1px solid #443825;
 }
 
 .f_nav .f_blog {
@@ -191,4 +183,8 @@ ul {
 
 .f_nav a {
 	width: 48px;
+}
+
+.footer p a {
+	border-bottom: 1px dotted #443825;
 }
