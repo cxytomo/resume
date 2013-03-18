@@ -65,7 +65,7 @@ ul {
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 .widget {
-	margin-bottom: 30px;
+	margin-bottom: 35px;
 }
 
 .ico_title {
@@ -82,7 +82,12 @@ ul {
 .ico {
 	width: 112px;
 	height: 112px;
+	margin-top: 5px;
 	margin-left: 22px;
+}
+
+.geolocation {
+	position: relative;
 }
 
 .cashbook .ico {
@@ -106,10 +111,19 @@ ul {
 }
 	
 .collapse .ico {
+	height: 83px;
+	margin-top: 0;
+	-webkit-transform-origin: 50% 0;
+	-webkit-transform: scale(1, 1);
+	-webkit-transition: height 1s;
+	-moz-transition: height 1s;
+	-o-transition: height 1s;
+	transition: height 1s;
 	background-image: url('images/collapse.png');
 }
 	
 .transform .ico {
+	position: relative;
 	background-image: url('images/transform.png');
 }
 
@@ -117,13 +131,7 @@ ul {
 	background-image: url('images/slide.png');
 }
 
-.geolocation {
-	position: relative;
-}
 
-.geolocation a{
-	margin-top: 5px;
-}
 
 .ico_title a {
 	margin-top: 0;
@@ -133,7 +141,7 @@ ul {
 	background-image: url('images/geo_locate.png');
 	display: inline-block;
 	left: 68px;
-	top: 27px;
+	top: 28px;
 	width: 19px;
 	height: 24px;
 	position: absolute;
@@ -149,15 +157,42 @@ ul {
 	margin: 5px 38px 0;
 }
 
-.collapse .ico {
-	height: 83px;
-	-webkit-transform-origin: 50% 0;
-	-webkit-transform: scale(1, 1);
-	-webkit-transition: height 1s;
-	-moz-transition: height 1s;
-	-o-transition: height 1s;
-	transition: height 1s;
+.transform .ico::before, .transform .ico::after {
+	display: block;
+	position: absolute;
+	background-color: white;
+	content:"";
+	border: 1px solid #ccc;
+	height: 50px;
+	width: 70px;
+	top: -1px;
 }
+
+.transform .ico::before {
+	z-index: 5;
+	-moz-transform: translate(22px) rotate(2.5deg);
+	-webkit-transform: translate(22px) rotate(2.5deg);
+	transform: translate(22px) rotate(2.5deg);
+}
+
+.transform .ico::after {
+	z-index: 4;
+	-moz-transform: translate(19px) rotate(-2.5deg);
+	-webkit-transform: translate(19px) rotate(-2.5deg);
+	transform: translate(19px) rotate(-2.5deg);
+}
+
+.list_transf {
+	position: relative;
+	z-index: 10;
+	width: 70px;
+	height: 95px;
+	border: 1px solid #ccc;
+	background-color: white;
+	margin: 0 auto;
+}
+
+
 
 .footer {
 	padding: 5px 0 9px 0;
