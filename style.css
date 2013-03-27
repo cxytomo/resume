@@ -222,14 +222,18 @@ li {
 }
 
 .footer {
-	background: #443825 url('images/target.png') no-repeat 916px 0;
+	background-color: #443825;
 	height: 120px;
 	position: relative;
 }
 
 .footer p {
 	position: absolute;
+	background-image: url('images/target.png');
+	background-repeat: no-repeat;
+	background-position: 15px 0;
 	color: #f8f7c1;
+	padding-top: 90px;
 	bottom: 10px;
 	right: 152px;
 	font: 18px  sans-serif;

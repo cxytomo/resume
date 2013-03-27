@@ -26,19 +26,17 @@
 //slide icon created by HTML5 canvas
 (function(){
 	var canv = $('#slide_icon')[0]
-	//canv.style.width='300px';
-	//canv.style.height='300px';
-	var cont = canv.getContext('2d');
+	,	cont = canv.getContext('2d');
 	//border
 	cont.beginPath();
 	cont.moveTo(8,10);
-	cont.arc(8,18,8,-Math.PI/2,-Math.PI,true);
+	cont.arc(8,18,8,Math.PI*3/2,Math.PI,true);
 	cont.lineTo(0,70);
-	cont.arc(8,70,8, -Math.PI, -Math.PI*3/2,true);
+	cont.arc(8,70,8,Math.PI, Math.PI/2,true);
 	cont.lineTo(92,78);
-	cont.arc(92,70,8,-Math.PI*3/2,-Math.PI*2,true);
+	cont.arc(92,70,8,Math.PI/2,0,true);
 	cont.lineTo(100,18);
-	cont.arc(92,18,8,0,-Math.PI/2,true);
+	cont.arc(92,18,8,0,Math.PI*3/2,true);
 	cont.lineTo(8,10);
 	cont.strokeStyle = "#7f7f7f";
 	cont.closePath();
@@ -46,13 +44,13 @@
 	//content
 	cont.beginPath();
 	cont.moveTo(24,26);
-	cont.arc(24,34,8,-Math.PI/2,-Math.PI,true);
+	cont.arc(24,34,8,Math.PI*3/2,Math.PI,true);
 	cont.lineTo(16,54);
-	cont.arc(24,54,8, -Math.PI, -Math.PI*3/2,true);
+	cont.arc(24,54,8,Math.PI, Math.PI/2,true);
 	cont.lineTo(76,62);
-	cont.arc(76,54,8,-Math.PI*3/2,-Math.PI*2,true);
+	cont.arc(76,54,8,Math.PI/2,0,true);
 	cont.lineTo(84,34);
-	cont.arc(76,34,8,0,-Math.PI/2,true);
+	cont.arc(76,34,8,0,Math.PI*3/2,true);
 	cont.lineTo(24,26);
 	cont.fillStyle = "#7f7f7f";
 	cont.closePath();
@@ -75,5 +73,4 @@
 	cont.fillStyle = "white";
 	cont.closePath();
 	cont.fill();
-
 })();
