@@ -1,0 +1,271 @@
+html, body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.header {
+	position: relative;
+	background-color: #F2F2F2;
+	margin-bottom: 40px;
+}
+
+.header p {
+	color: #443825;
+	font: 48px Arial,sans-serif;
+	padding: 68px 386px 68px 327px;
+}
+
+.demo_logo {
+	float: left;
+	height: 166px;
+	width: 166px;
+	background-image: url('images/demo_logo.png');
+	background-repeat: no-repeat;
+	margin: 12px 0 0 151px;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.col {
+	float: left;
+	width: 156px;
+	margin: 0 123px;
+}
+
+.wrapper .leftmost {
+	margin-left: 0;
+}
+
+.wrapper .rightmost {
+	margin-right: 0;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.widget {
+	margin-bottom: 35px;
+}
+
+.ico_title {
+	width: 156px;
+	text-align: center;
+	color: #7f7f7f;
+	font: 18px Arial,sans-serif;
+}
+
+.ico_title a:hover {
+	color: #A4CFBC;
+}
+
+.ico {
+	width: 112px;
+	height: 112px;
+	margin-top: 5px;
+	margin-left: 22px;
+}
+
+.geolocation {
+	position: relative;
+}
+
+.cashbook .ico {
+	background-image: url('images/cashbook.png');
+}
+
+.cashbook .ico:hover {
+	background-position: 100% 100%;
+}
+
+.tool_tip .ico {
+	background-image: url('images/tooltip.png');
+}
+
+.tool_tip .ico:hover {
+	background-position: 100% 100%;
+}
+
+.geolocation .ico{
+	background-image: url('images/geolocation.png');
+}
+	
+.collapse .ico {
+	height: 83px;
+	margin-top: 0;
+	-webkit-transform-origin: 50% 0;
+	-webkit-transform: scale(1, 1);
+	-webkit-transition: height 1s;
+	-moz-transition: height 1s;
+	-o-transition: height 1s;
+	transition: height 1s;
+	background-image: url('images/collapse.png');
+}
+
+.ico_title a {
+	margin-top: 0;
+}
+
+.geolocation span {
+	background-image: url('images/geo_locate.png');
+	display: inline-block;
+	left: 68px;
+	top: 28px;
+	width: 19px;
+	height: 24px;
+	position: absolute;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.collapse .spring_base {
+	border-top: 10px solid #7F7F7F;
+	margin: 5px 38px 0;
+}
+
+.transform .ico {
+	position: relative;
+}
+
+.transform .ico::before, .transform .ico::after {
+	display: block;
+	position: absolute;
+	background-color: white;
+	content:"";
+	border: 1px solid #ccc;
+	height: 50px;
+	width: 70px;
+	top: -1px;
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.transform .ico::before {
+	z-index: 5;
+	-moz-transform: translate(21px) rotate(2.5deg);
+	-webkit-transform: translate(21px) rotate(2.5deg);
+	transform: translate(21px) rotate(2.5deg);
+}
+
+.transform .ico::after {
+	z-index: 4;
+	-moz-transform: translate(19px) rotate(-2.5deg);
+	-webkit-transform: translate(19px) rotate(-2.5deg);
+	transform: translate(19px) rotate(-2.5deg);
+}
+
+.transform pre {
+	font-size: 4px;
+}
+
+.list_transf {
+	position: relative;
+	z-index: 10;
+	width: 70px;
+	height: 95px;
+	border: 1px solid #ccc;
+	background-color: white;
+	margin: 0 auto;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.slide .ico {
+	width: 100px;
+	height: 100px;
+	margin: 5px 0 12px 28px;
+}
+
+.footer {
+	padding: 2px 0;
+	text-align: center;
+	color: #443825;
+	font: 12px Arial, sans-serif;
+	background-color: #a4cfbc;
+}
+
+.f_nav {
+	margin: 10px auto 5px auto;
+	width: 146px;
+}
+
+.f_nav li {
+	float: left;
+	border-right: 1px solid #443825;
+}
+
+.f_nav .f_blog {
+	border-right: none;
+}
+
+.f_nav a {
+	width: 48px;
+}
+
+.footer p a {
+	border-bottom: 1px dotted #443825;
+}
+
+/*tooltip style*/
+.tip {
+	display: block;
+	position: relative;
+	/*margin: 1em 0;*/
+}
+
+.tooltip {
+	z-index: 1000;
+	display: block;
+	position: absolute;
+	font: 18px Helvetica, sans-serif;
+	background-color: #333;
+	max-width: 150px;
+	opacity: 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.tooltip-inner {
+	margin: 10px;
+}
+
+.tooltip.top .tooltip-arrow {
+	position: absolute;
+	bottom: -8px;
+	border: 4px solid #333;
+	border-color: #333 transparent transparent transparent;
+}
+
+.tooltip.bottom .tooltip-arrow {
+	position: absolute;
+	top: -8px;
+	border: 4px solid #333;
+	border-color: transparent transparent #333 transparent;
+}
