@@ -130,29 +130,3 @@ function determ_p(){
 	}
 	return p;
 }
-//wave-1
-/*
-(function(){
-	var count = 18
-	,	flag = 2
-	window.onload = function (){
-		setInterval(wave,100);
-	}
-	function wave() {
-		var left = parseInt($('.wave-bottom').css("left"))
-		,	top = parseInt($('.wave-bottom').css("top"))
-		,	marineTop = parseInt($('.marine').css("top"));
-		if(count == 0) {
-			count = 18;
-			flag = -1 * flag;
-			$('.marine').css("top",marineTop + 2*flag +"px");
-		} else{
-			count = count - 1;
-		}
-		 left = left + flag;
-		 top = -0.016*left * left - 0.92 * left - 6.89;
-		 $('.wave-bottom').css("left",left + "px");
-		 $('.wave-bottom').css("top",top + "px");
-	}
-})()
-*/

@@ -180,51 +180,33 @@ li {
 	animation-state: running;
 }
 
-/*
-.wave {
-	width: 100%;
-	height: 80px;
-	position: absolute;
-	overflow: hidden;
-	top: -30px;
-}
-
-.wave-top, .wave-bottom {
-	height: 52px;
-	position: absolute;
-}
-
-.wave-top {
-	background: url('images/wave-top.png') repeat-x top;
-	z-index: 30;
-	width: 100%;
-	top: 10px;
-}
-
-.wave-bottom {
-	z-index: 1;
-	top: 2px;
-	width: 110%;
-	left: -48px;
-	background: url('images/wave-bottom.png') repeat-x top;
-}
-*/
-
 .marine, #locate, #rank, #explore, #entertain {
 	position: absolute;
 	display: block;
 	width: 960px;
 }
 
+@-webkit-keyframes marine {
+	from {
+		top: -133px;
+	}
+	to {
+		top: -128px;
+	}
+}
+
 .marine {
-	-webkit-transition: top 0.6s;
-	-moz-transition: top 0.6s;
-	-o-transition: top 0.6s;
-	transition: top 0.6s;
+	-webkit-animation-name: marine;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-delay: 2s;
+	-webkit-animation-iteration-count: 10;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-state: running;
 	z-index: 1;
 	height: 164px;
 	width: 469px;
-	top: -130px;
+	top: -133px;
 	background: url(images/submarine.png) no-repeat;
 }
 
@@ -364,9 +346,10 @@ li {
 .footer {
 	background-color: #443825;
 	height: 120px;
+	position: relative;
 }
 
-.footer div {
+.footer .copyright {
 	width: 960px;
 	height: 62px;
 	margin: 0 auto;
@@ -376,13 +359,51 @@ li {
 	background-position: 763px -1px;
 }
 
-.footer p {
+.copyright p {
 	position: absolute;
 	right: 0px;
 	top: 0px;
 	color: #f8f7c1;
 	padding-top: 90px;
 	font: 18px  sans-serif;
+}
+
+@-webkit-keyframes bubbleup {
+	from {
+		top: 0;
+		opacity: 1;
+		background-size: 5px 5px;
+	}
+	to {
+		top: -300px;
+		opacity: 0;
+		background-size: 50px 50px;
+	}
+}
+
+.bubbleup div{
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	top: 0;
+	opacity: 1;
+	background-repeat: no-repeat;
+	background-image: url('images/bubble_bottom.png');
+	background-size: 5px 5px;
+	-webkit-animation-name: bubbleup;
+	-webkit-animation-duration: 2s;
+	-webkit-animatin-timing-function: ease-in;
+	-webkit-animation-iteration-count: 1;
+}
+
+.b1 {
+	left: 20px;
+}
+.b2 {
+	left: 45px;
+}
+.b3 {
+	left: 60px;
 }
 
 #scrollToTop {
