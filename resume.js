@@ -1,4 +1,8 @@
 var p={position: "locate"};
+var bomb = {angle:0,
+	toLeft: parseInt($('.bomb_move').css("left")),
+	toTop: parseInt($('.bomb_move').css("top"))};
+var ptop = 8;
 window.onscroll = function() { 
 	if(getScrollOffset().y >= 300) {
 		$('#quickMove').css({'position': 'fixed','top': '47px'});
@@ -12,13 +16,13 @@ window.onscroll = function() {
 		}
 	}
 	if(getScrollOffset().y < 300) {
-		$('#quickMove').css({'position': 'absolute','top': '350px'});
+		$('#quickMove').css({'position': 'absolute','top': '125px'});
 		$('#scrollToTop').css('opacity', '0');
 		$('.bubble1').css('opacity','0');
 		$('.bubble2').css('opacity','0');
 		$('.bubble3').css('opacity','0');
-		//setTimeout(hide, 1000);
 	}
+	//bombMove();
 };
 
 $('#scrollToTop .rocket').click(
@@ -35,6 +39,42 @@ $('#scrollToTop .rocket').click(
 		toTop(0.2, 60);
 	}
 );
+
+function bombMove() {
+	/*var scaleTop = 1.12
+	,	scaleAngle = 1.04;
+	console.log(getScrollOffset().y);
+	if(getScrollOffset().y > 105) {
+		scaleTop = 0.99;
+		pleft = -1 * Math.abs(pleft);
+	}
+	ptop = ptop * scaleTop;
+	pangle = pangle * scaleAngle;
+	bomb.angle = bomb.angle + pangle;
+	bomb.toLeft = bomb.toLeft + pleft;
+	bomb.toTop = bomb.toTop + ptop;
+	*/var scaleTop = 1.01
+	,	pangle = 2
+	,	scaleAngle = 1
+	,	pleft;
+	pangle = pangle * scaleAngle;
+	ptop = ptop*scaleTop;
+	bomb.toTop = bomb.toTop + ptop;
+	console.log("ptop:"+ptop);
+	pleft = 380 * Math.sin((bomb.toTop-50)*0.00628)+460;
+	pangle = pangle * scaleAngle;
+	bomb.angle = bomb.angle + pangle;
+	bomb.toLeft = pleft;
+	console.log("scrolltop:"+getScrollOffset().y);
+	$('.bomb_move').css({
+		"-webkit-transform": "rotate(" + bomb.angle + "deg)",
+		"-moz-transform": "rotate(" + bomb.angle + "deg)",
+		"-o-transform": "rotate(" + bomb.angle + "deg)",
+		"transform": "rotate(" + bomb.angle + "deg)",
+		"left": bomb.toLeft + "px",
+		"top": bomb.toTop + "px"
+	});
+}
 
 function toTop(accel, time){
 	// a:accelerate
@@ -90,3 +130,29 @@ function determ_p(){
 	}
 	return p;
 }
+//wave-1
+/*
+(function(){
+	var count = 18
+	,	flag = 2
+	window.onload = function (){
+		setInterval(wave,100);
+	}
+	function wave() {
+		var left = parseInt($('.wave-bottom').css("left"))
+		,	top = parseInt($('.wave-bottom').css("top"))
+		,	marineTop = parseInt($('.marine').css("top"));
+		if(count == 0) {
+			count = 18;
+			flag = -1 * flag;
+			$('.marine').css("top",marineTop + 2*flag +"px");
+		} else{
+			count = count - 1;
+		}
+		 left = left + flag;
+		 top = -0.016*left * left - 0.92 * left - 6.89;
+		 $('.wave-bottom').css("left",left + "px");
+		 $('.wave-bottom').css("top",top + "px");
+	}
+})()
+*/

@@ -3,20 +3,23 @@ margin: 0;
 padding: 0;
 }
 
-h2 {
-	color: #443825;
-	
+body {
+	background-color: #443825;
 }
 
 h2 {
 	color: #9B2D13;
 	margin-bottom: 10px;
-	font: 30px "amrican typewriter" serif;
+	font: 30px "amrican typewriter", serif;
 }
 
 a {
 	text-decoration: none;
 
+}
+
+li {
+	list-style-type: none;
 }
 
 ::selection {
@@ -41,7 +44,7 @@ a {
 	position: relative;
 	height: 214px;
 	width: 100%;
-	background-color: #fff;
+	background-color: #F2F2F2;
 	margin: 0 auto;
 }
 
@@ -49,17 +52,14 @@ a {
 	font: 18px Arial,sans-serif;
 	color: #443825;
 	height: 20px;
-	margin-top: 10px;
+	padding-top: 10px;
 	margin-right: 151px;
-}
-
-.nav li {
-	float: right;
 	text-align: center;
-	margin-left: 10px;
 }
 
 .nav a {
+	float: right;
+	margin-left: 10px;
 	padding: 2px;
 	color: #443825;
 	border: solid 2px transparent;
@@ -82,8 +82,14 @@ a {
 }
 
 .container {
+	background: url('images/main_bg2.jpg') no-repeat 30% 60%;
+	position: relative;
 	background-color: #A4CFBC;
+}
+
+.shell {
 	margin: 0 auto;
+	width: 960px;
 }
 
 .main {
@@ -94,6 +100,116 @@ a {
 	position: relative;
 }
 
+.wave {
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	overflow: hidden;
+	top: -38px;
+}
+
+.waveb, .wavef {
+	height: 55px;
+	position: absolute;
+}
+
+@keyframes wave2 {
+	from{
+		left:-251px;
+	}
+	to{
+		left: 0px;
+	}
+}
+
+@-webkit-keyframes wave2 {
+	from {
+		left: -251px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+.waveb {
+	background: url('images/waveb.png') repeat-x top;
+	width: 120%;
+	z-index: 2;
+	top: 2px;
+	left: -251px;
+	-webkit-animation-name: wave2;
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 2.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	animation-name: wave2;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-delay: 2.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes wave1 {
+	from{
+		left: -245px
+	}
+	to {
+		left: 0;
+	}
+}
+
+.wavef {
+	background: url('images/wavef.png') repeat-x top;
+	width: 120%;
+	z-index: 10;
+	-webkit-animation-name: wave1;
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-state: running;
+	animation-name: wave1;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-state: running;
+}
+
+/*
+.wave {
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	overflow: hidden;
+	top: -30px;
+}
+
+.wave-top, .wave-bottom {
+	height: 52px;
+	position: absolute;
+}
+
+.wave-top {
+	background: url('images/wave-top.png') repeat-x top;
+	z-index: 30;
+	width: 100%;
+	top: 10px;
+}
+
+.wave-bottom {
+	z-index: 1;
+	top: 2px;
+	width: 110%;
+	left: -48px;
+	background: url('images/wave-bottom.png') repeat-x top;
+}
+*/
+
 .marine, #locate, #rank, #explore, #entertain {
 	position: absolute;
 	display: block;
@@ -101,10 +217,28 @@ a {
 }
 
 .marine {
+	-webkit-transition: top 0.6s;
+	-moz-transition: top 0.6s;
+	-o-transition: top 0.6s;
+	transition: top 0.6s;
+	z-index: 1;
 	height: 164px;
 	width: 469px;
-	top: -110px;
+	top: -130px;
 	background: url(images/submarine.png) no-repeat;
+}
+
+.bomb_move {
+	height: 40px;
+	width: 73px;
+	position: absolute;
+	top: 50px;
+	left: 226px;
+	background: url('images/bomb_move.png') no-repeat top center;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0.02turn);
+	-ms-transform: rotate(0.02turn);
+	-o-transform: rotate(0.02turn);
 }
 
 .dscrpt {
@@ -127,6 +261,15 @@ a {
 #locate {
 	top: 224px;
 
+}
+
+.scratch {
+	position: relative;
+}
+
+.scratch canvas {
+	position: absolute;
+	top: 1px;
 }
 
 #rank {
@@ -169,6 +312,7 @@ a {
 	-moz-transform: rotate(0.02turn);
 	-ms-transform: rotate(0.02turn);
 	-o-transform: rotate(0.02turn);
+	transform: rotate(0.02turn);
 	background-position: 100% 100%;
 }
 
@@ -186,10 +330,6 @@ a {
 
 #entertain .v2ex a {
 	background-image: url('images/v2ex.png');
-}
-
-li {
-	list-style-type: none;
 }
 
 #explore li {
@@ -224,17 +364,24 @@ li {
 .footer {
 	background-color: #443825;
 	height: 120px;
+}
+
+.footer div {
+	width: 960px;
+	height: 62px;
+	margin: 0 auto;
 	position: relative;
+	background-image: url('images/target.png');
+	background-repeat: no-repeat;
+	background-position: 763px -1px;
 }
 
 .footer p {
 	position: absolute;
-	background-image: url('images/target.png');
-	background-repeat: no-repeat;
-	background-position: 15px -1px;
+	right: 0px;
+	top: 0px;
 	color: #f8f7c1;
 	padding-top: 90px;
-	right: 152px;
 	font: 18px  sans-serif;
 }
 
@@ -291,7 +438,7 @@ li {
 	background: url('images/holder.png') no-repeat 0 3px;
 	position: absolute;
 	left: 0;
-	top: 350px;
+	top: 125px;
 }
 
 #quickMove .fold {
