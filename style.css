@@ -82,7 +82,7 @@ li {
 }
 
 .container {
-	background: url('images/main_bg2.jpg') no-repeat 30% 60%;
+	background: url('images/bg_pyramid.jpg') 30% 60% no-repeat, red url('images/bg_searuin.jpg') 36% 13% no-repeat;
 	position: relative;
 	background-color: #A4CFBC;
 }
@@ -93,7 +93,7 @@ li {
 }
 
 .main {
-	background: url(images/main_bg.png) top center  no-repeat;
+	background: url('images/main_bg.png') top center  no-repeat;
 	height: 3114px;
 	width: 960px;
 	margin: 0 auto;
@@ -207,7 +207,7 @@ li {
 	height: 164px;
 	width: 469px;
 	top: -133px;
-	background: url(images/submarine.png) no-repeat;
+	background: url('images/submarine.png') no-repeat;
 }
 
 .bomb_move {
@@ -371,13 +371,16 @@ li {
 @-webkit-keyframes bubbleup {
 	from {
 		top: 0;
-		opacity: 1;
+		opacity: 0;
 		background-size: 5px 5px;
 	}
+	1% {
+		opacity: 1;
+	}
 	to {
-		top: -300px;
+		top: -400px;
 		opacity: 0;
-		background-size: 50px 50px;
+		background-size: 40px 40px;
 	}
 }
 
@@ -385,15 +388,16 @@ li {
 	position: absolute;
 	height: 140px;
 	width: 140px;
-	top: 0;
-	opacity: 1;
+	top: -80px;
+	left: 0px;
+	opacity: 0;
 	background-repeat: no-repeat;
 	background-image: url('images/bubble_bottom.png');
 	background-size: 5px 5px;
 	-webkit-animation-name: bubbleup;
-	-webkit-animation-duration: 2s;
+	-webkit-animation-duration: 3s;
 	-webkit-animatin-timing-function: ease-in;
-	-webkit-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: infinite;
 }
 
 .b1 {
@@ -417,7 +421,7 @@ li {
 	height: 102px;
 	width: 39px;
 	right: 58px;
-	top: 300px;
+	top: 400px;
 }
 
 #scrollToTop .rocket {

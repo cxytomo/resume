@@ -40,20 +40,20 @@ $('#scrollToTop .rocket').click(
 	}
 );
 
-function bombMove() {
-	/*var scaleTop = 1.12
-	,	scaleAngle = 1.04;
-	console.log(getScrollOffset().y);
-	if(getScrollOffset().y > 105) {
-		scaleTop = 0.99;
-		pleft = -1 * Math.abs(pleft);
-	}
-	ptop = ptop * scaleTop;
-	pangle = pangle * scaleAngle;
-	bomb.angle = bomb.angle + pangle;
-	bomb.toLeft = bomb.toLeft + pleft;
-	bomb.toTop = bomb.toTop + ptop;
-	*/var scaleTop = 1.01
+/*function bombMove() {
+	//var scaleTop = 1.12
+	//,	scaleAngle = 1.04;
+	//console.log(getScrollOffset().y);
+	//if(getScrollOffset().y > 105) {
+	//	scaleTop = 0.99;
+	//	pleft = -1 * Math.abs(pleft);
+	//}
+	//ptop = ptop * scaleTop;
+	//pangle = pangle * scaleAngle;
+	//bomb.angle = bomb.angle + pangle;
+	//bomb.toLeft = bomb.toLeft + pleft;
+	//bomb.toTop = bomb.toTop + ptop;
+	//var scaleTop = 1.01
 	,	pangle = 2
 	,	scaleAngle = 1
 	,	pleft;
@@ -75,6 +75,7 @@ function bombMove() {
 		"top": bomb.toTop + "px"
 	});
 }
+*/
 
 function toTop(accel, time){
 	// a:accelerate
@@ -130,3 +131,20 @@ function determ_p(){
 	}
 	return p;
 }
+
+(function(){
+	setInterval(function(){
+		bubbleup($('.b1'));
+	},3000);
+	setInterval(function(){
+		bubbleup($('.b2'));
+	},6000);
+	setInterval(function(){
+		bubbleup($('.b3'));
+	},9000);
+	function bubbleup(e){
+		var locatn = Math.ceil(Math.random()*960);
+		locatn = locatn + 152;
+		e.css("left", locatn + "px");
+	}
+})();
