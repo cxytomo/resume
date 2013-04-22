@@ -5,7 +5,6 @@ var bomb = {angle:0,
 var ptop = 8;
 window.onscroll = function() { 
 	if(getScrollOffset().y >= 300) {
-		$('#quickMove').css({'position': 'fixed','top': '47px'});
 		$('#scrollToTop').css('opacity','1');
 		var position = determ_p();
 		$('#quickMove' + ' .' +p.position)[0].className += " cur_p";
@@ -16,7 +15,6 @@ window.onscroll = function() {
 		}
 	}
 	if(getScrollOffset().y < 300) {
-		$('#quickMove').css({'position': 'absolute','top': '125px'});
 		$('#scrollToTop').css('opacity', '0');
 		$('.bubble1').css('opacity','0');
 		$('.bubble2').css('opacity','0');
@@ -147,4 +145,65 @@ function determ_p(){
 		locatn = locatn + 152;
 		e.css("left", locatn + "px");
 	}
+})();
+
+//canvas
+(function(){
+	var canv = $('.scratch canvas')
+	,	context = canv[1].getContext('2d')
+	,	eraser;
+	function init() {
+		var contxt1 = canv[0].getContext('2d');
+		contxt1.font = "20px Arial";
+		contxt1.fillStyle = "#595741";
+		contxt1.fillText("15158107674",10,18);
+		context.fillStyle = "#595741";
+		context.fillRect(0,0,130,23);
+		eraser = new Eraser(); 
+		canv[1].addEventListener('mousedown', envCanvas, false);
+		canv[1].addEventListener('mousemove', envCanvas, false);
+		canv[1].addEventListener('mouseup', envCanvas, false);
+	}
+	function Eraser(e){
+		var tool = this;
+		this.started = false;
+		this.mousedown = function (e) {
+			context.beginPath();
+			context.moveTo(e._x, e._y);
+			tool.started = true;
+	 	 };
+		this.mousemove = function (e) {
+		    if(tool.started) {
+		    	context.lineTo(e._x, e._y);
+				/*source-over 默认,相交部分由后绘制图形的填充(颜色,渐变,纹理)覆盖,全部浏览器通过*/
+			    context.globalCompositeOperation = "destination-out";
+			    context.arc(e._x, e._y, 3, 0, Math.PI * 2);
+			    context.strokeStyle = "rgba(250,250,250,0)";//使用颜色值为白色，透明为0的颜色填充
+			    context.fill();
+			    context.globalCompositeOperation = "source-over";
+		    }
+		    
+	 	};
+		this.mouseup = function (e) {
+		    if(tool.started) {
+				tool.mousemove(e);
+				tool.started = false;
+		    }
+	  	};
+	} 
+	//give the x,y coordination
+	function envCanvas(e) {
+		if(e.layerX || e.layerX == 0) { // Firefox
+			e._x = e.layerX;
+			e._y = e.layerY;
+			} else if(e.offsetX || e.offsetX == 0) { // Opera
+			e._x = e.offsetX;
+			e._y = e.offsetY;
+			}
+		var func = eraser[e.type];
+		if (func){
+			func(e);
+		}
+	}
+	init();
 })();
