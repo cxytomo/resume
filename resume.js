@@ -38,42 +38,6 @@ $('#scrollToTop .rocket').click(
 	}
 );
 
-/*function bombMove() {
-	//var scaleTop = 1.12
-	//,	scaleAngle = 1.04;
-	//console.log(getScrollOffset().y);
-	//if(getScrollOffset().y > 105) {
-	//	scaleTop = 0.99;
-	//	pleft = -1 * Math.abs(pleft);
-	//}
-	//ptop = ptop * scaleTop;
-	//pangle = pangle * scaleAngle;
-	//bomb.angle = bomb.angle + pangle;
-	//bomb.toLeft = bomb.toLeft + pleft;
-	//bomb.toTop = bomb.toTop + ptop;
-	//var scaleTop = 1.01
-	,	pangle = 2
-	,	scaleAngle = 1
-	,	pleft;
-	pangle = pangle * scaleAngle;
-	ptop = ptop*scaleTop;
-	bomb.toTop = bomb.toTop + ptop;
-	console.log("ptop:"+ptop);
-	pleft = 380 * Math.sin((bomb.toTop-50)*0.00628)+460;
-	pangle = pangle * scaleAngle;
-	bomb.angle = bomb.angle + pangle;
-	bomb.toLeft = pleft;
-	console.log("scrolltop:"+getScrollOffset().y);
-	$('.bomb_move').css({
-		"-webkit-transform": "rotate(" + bomb.angle + "deg)",
-		"-moz-transform": "rotate(" + bomb.angle + "deg)",
-		"-o-transform": "rotate(" + bomb.angle + "deg)",
-		"transform": "rotate(" + bomb.angle + "deg)",
-		"left": bomb.toLeft + "px",
-		"top": bomb.toTop + "px"
-	});
-}
-*/
 
 function toTop(accel, time){
 	// a:accelerate
@@ -147,7 +111,7 @@ function determ_p(){
 	}
 })();
 
-//canvas
+//canvas scratch to show my number
 (function(){
 	var canv = $('.scratch canvas')
 	,	context = canv[1].getContext('2d')
@@ -206,4 +170,51 @@ function determ_p(){
 		}
 	}
 	init();
+})();
+
+//canvas location scanner
+(function(){
+	var canv = $('.scanner')[0]
+	,	contxt = canv.getContext('2d')
+	,	angle = 0;
+	
+	setInterval(lineScan,20);
+	//lineScan();
+	function lineScan() {
+		canv.width="166";
+		if(angle == 360) {
+			angle = 0;
+		}
+		contxt.translate(83,83);
+		angle = angle + 1;
+		contxt.save();
+		contxt.rotate(angle * Math.PI / 180);
+		var gl = contxt.createLinearGradient(70,0,70,35);
+		gl.addColorStop(0,"rgba(89,87,65,0.99)");
+		gl.addColorStop(1,"rgba(89,87,65,0.1)");
+		contxt.fillStyle = gl;
+		contxt.beginPath();
+		contxt.moveTo(0,0);
+		contxt.lineTo(70,0);
+		contxt.arc(0,0,70,0,Math.PI/6);
+		contxt.lineTo(0,0);
+		contxt.closePath();
+		contxt.fill();
+		contxt.restore();
+		contxt.beginPath();
+		if(angle < 61 && angle > 1) {
+			var gr = contxt.createRadialGradient(25,25,0,25,25,11);
+			gr.addColorStop(0,"rgba(68,56,37,1)");
+			gr.addColorStop(0.8,"rgba(68,56,37,1)");
+			gr.addColorStop(1,"rgba(68,56,37,0.5)");
+			contxt.fillStyle = gr;
+			contxt.arc(25,25,11,0,Math.PI*2);
+			contxt.fill();
+		} else {
+			contxt.fillStyle = "#595741";
+			contxt.arc(25,25,10,0,Math.PI*2);
+			contxt.fill();
+		}
+		contxt.closePath();
+	}	
 })();
