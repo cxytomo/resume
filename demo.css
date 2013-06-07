@@ -181,6 +181,8 @@ ul {
 
 .transform pre {
 	font-size: 4px;
+	width: 70px;
+	overflow: hidden;
 }
 
 .list_transf {
