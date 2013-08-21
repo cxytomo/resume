@@ -94,23 +94,6 @@ function determ_p(){
 	return p;
 }
 
-(function(){
-	setInterval(function(){
-		bubbleup($('.b1'));
-	},3000);
-	setInterval(function(){
-		bubbleup($('.b2'));
-	},6000);
-	setInterval(function(){
-		bubbleup($('.b3'));
-	},9000);
-	function bubbleup(e){
-		var locatn = Math.ceil(Math.random()*960);
-		locatn = locatn + 152;
-		e.css("left", locatn + "px");
-	}
-})();
-
 //canvas scratch to show my number
 (function(){
 	var canv = $('.scratch canvas')
